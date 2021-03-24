@@ -6,8 +6,6 @@ usuário e imprimir o fatorial dele, ou se não é possível calcular o fatorial
 */
 
 
-#include <stdio.h>
-
 int f_fat(int num){
 	
 	int fatorial;

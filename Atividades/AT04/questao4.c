@@ -5,25 +5,30 @@ para fazer o retorno.
 */
 
 #include <stdio.h>
+#define TAM 3
 
-int ler3Numeros(){
+void ler3Numeros(int *v, int tamanho){
 
-	int i, total[3];
+	int i;
 
-	for (i =1; i<=3; i++){
-
-		printf("Informe um numero:\n");
-		scanf("%d", &total[i]);
+	for (i = 0; i < tamanho; i++){
+		printf("Informe valor posicao %d: ", i);
+		scanf("%d", &v[i]);
 	}
 
-	return total[3];
 }
 
 int main(){
 
-	int resultado;
+	int vetor[TAM], tam = TAM, j;
 
-	resultado = ler3Numeros();
+	ler3Numeros(vetor, tam);
 
-	printf("Result: %d\n\n", resultado);
+	for (j = 0; j< tam; j++){
+		printf("Posicao %d = %d\n", j, vetor[j]);
+
+	}
+	
+	
+	return 0;
 }
