@@ -1,0 +1,1 @@
+void cadastroProfessor(void);

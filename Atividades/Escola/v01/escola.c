@@ -1,6 +1,12 @@
 // Projeto escola V1
 
 #include <stdio.h>
+#include "cadastroAluno.h"
+#include "cadastroProfessor.h"
+#include "cadastroDisciplina.h"
+#include "editarDisciplina.h"
+
+int quantidade; // variavel global para atender a chamada da função na linha '37'
 
 struct Aluno
 {
@@ -28,23 +34,31 @@ struct Disciplina
 	char professor[100];
 };
 
+int cadastroAluno(int quantidade);
 void cadastroProfessor();
-void cadastroAluno();
 void cadastroDisciplina();
 void editarDisciplina();
 
+void imprimeLinha(void);
+
 int main(){
 
-	int opcao;
+	struct Aluno dadosAluno[quantidade];
 
-	printf("\n####### SISTEMA DE CADASTRO - ESCOLA #######\n");
-	printf("1 - Cadastro de Alunos\n2 - Cadastro de Professores\n3 - Cadastro de Disciplinas\n4 - Alterar Disciplina\n\n");
-	printf("Selecione a opcao desejada: ");
+	int opcao; // variavel que recebe qual opção o usuario deseja cadastrar
+
+	imprimeLinha();
+	printf("\n--------------- SISTEMA DE CADASTRO # ESCOLA ---------------\n");
+	imprimeLinha();
+	printf("\n1 - Cadastro de Alunos\n2 - Cadastro de Professores\n3 - Cadastro de Disciplinas\n4 - Alterar Disciplina\n\n");
+	printf("-> Selecione a opcao desejada: ");
 	scanf("%d", &opcao); //Ler do usuario a opcao desejada
 
 	switch (opcao){
 		case 1:
-			cadastroAluno();
+			printf("-> Quantos alunos deseja cadastrar? ");
+			scanf("%d", &quantidade); // passagem da quantidade de vezes que a função será executada por parametro
+			cadastroAluno(quantidade);
 			break;
 		case 2:
 			cadastroProfessor();
@@ -63,38 +77,7 @@ int main(){
 
 }
 
-void cadastroAluno(void){
-	printf("\n####### CADASTRO DE ALUNO #######\n");
-	printf("\nInforme o nome do aluno: ");
-	printf("\nMatricula: ");
-	printf("\nSexo: ");
-	printf("\nNascimento: ");
-	printf("\nCPF: ");
-	printf("\n\n");
-
-}
-
-void cadastroProfessor(void){
-	printf("\n####### CADASTRO DE PROFESSOR #######\n");
-	printf("\nInforme o nome do professor: ");
-	printf("\nMatricula: ");
-	printf("\nSexo: ");
-	printf("\nNascimento: ");
-	printf("\nCPF: ");
-	printf("\n\n");
-
-}
-
-void cadastroDisciplina(void){
-	printf("\n####### CADASTRO DE DISCIPLINA #######\n");
-	printf("\nInforme o nome da disciplina: ");
-	printf("\nCodigo: ");
-	printf("\nSemestre: ");
-	printf("\nProfessor: ");
-	printf("\n\n");
-
-}
-
-void editarDisciplina(void){
+void imprimeLinha(void){
+	printf("\n------------------------------------------------------------\n");
 
 }
